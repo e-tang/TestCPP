@@ -1,13 +1,20 @@
+// shared_ptr::reset example
 #include <iostream>
-#include <type_traits>
+#include <memory>
 
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdint.h>
+int main () {
+  std::shared_ptr<int> sp;  // empty
 
-class A {};
+  sp.reset (new int);       // takes ownership of pointer
+  *sp=10;
+  std::cout << *sp << '\n';
 
-int main()
-{
-	return 0;
+  sp.reset (new int);       // deletes managed object, acquires new pointer
+  *sp=20;
+  std::cout << *sp << '\n';
+
+  // as it is a smart pointer, no need to manually reset it ?
+  sp.reset();               // deletes managed object
+
+  return 0;
 }

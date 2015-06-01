@@ -1,6 +1,6 @@
 CC = g++
 
-CFLAGS = -O2 -g -Wall -fmessage-length=0 -std=c++11
+CFLAGS := $(CFLAGS) -g -Wall -fmessage-length=0 -std=c++11
 
 OBJS =	Test.o \
 	TestSmartPtr.o \
@@ -19,7 +19,7 @@ Test: Test.o
 	$(CXX) -o Test Test.o $(LIBS)
 
 TestSmartPtr: TestSmartPtr.o
-	$(CXX) -o TestSmartPtr Test.o $(LIBS)
+	$(CXX) -o TestSmartPtr TestSmartPtr.o $(LIBS)
 #	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 	
 TestTS: TestTS.o

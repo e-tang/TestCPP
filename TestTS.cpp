@@ -36,7 +36,7 @@ public:
 };
 
 template<>
-class A<double> :
+class A<double>
 {
 	void plus(int b) {
 
@@ -49,7 +49,7 @@ int main()
 	a.plus(3);
 	a.print();
 
-	A<double> d(3.0);
+//	A<double> d(3.0);
 	return 0;
 }
 
